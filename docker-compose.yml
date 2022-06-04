@@ -1,0 +1,27 @@
+version: '3'
+services:
+  node:
+    image: node:16
+    container_name: bookstore-api
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+
+  db:
+    image: mongo
+    container_name: bookstore_api_db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 'root'
+      MONGO_INITDB_ROOT_PASSWORD: 'supersecret_pass'
+    ports:
+      - 27017:27017
+
+networks:
+  default:
+    name: bookstore_api_net
