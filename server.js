@@ -4,7 +4,8 @@ const PORT = 3000;
 const routes = {
   '/': 'start page',
   '/books': 'Books Route',
-  '/authors': 'Authors Route'
+  '/authors': 'Authors Route',
+  '/about': 'Project info'
 }
 
 const server = http.createServer((req, res) => {
