@@ -23,9 +23,6 @@ services:
   db:
     image: mongo
     container_name: bookstore_api_db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: 'root'
-      MONGO_INITDB_ROOT_PASSWORD: 'supersecret_pass'
     ports:
       - 27017:27017
 
